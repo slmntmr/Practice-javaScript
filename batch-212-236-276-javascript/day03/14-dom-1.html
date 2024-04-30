@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model-1</title>
+<style>
+
+.red{
+  color:red;
+  background-color:blue
+ 
+}
+
+.about{
+  color: violet;
+  text-align: center;
+  background-color: rgb(71, 255, 86);
+  font-size: 1.6rem;
+}
+
+
+</style>
+
+
+  </head>
+  <body>
+    <h1 class="title" style="color: red; text-align: center">Welcome to DOM</h1>
+    <h2 class="title-2" style="color: rgb(17, 0, 255); text-align: center">
+      <strong>Welcome to DOM -2</strong>
+    </h2>
+    <h3 id="h3El"> <strong>Temel Dom Islemleri</strong> </h3>
+
+
+    <ul class="list">
+        <li>Lorem.</li>
+        <li>Exercitationem?</li>
+        <li> <strong> Animi.</strong></li>
+    </ul>
+
+
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, tempora! Voluptatem, non!</div>
+
+<p class="about">Lorem, ipsum dolor.</p>
+
+    <script>
+      let titleEl = document.querySelector(".title");
+      let titleEl2 = document.querySelector(".title-2");
+
+      titleEl = titleEl.style = "color:green";
+    // console.log(titleEl);
+
+     
+  titleEl2=   titleEl2.innerHTML="elma"
+
+ let listEl=document.querySelector(".list li:last-child") 
+ console.log(listEl.innerText)
+ console.log(listEl.innerHTML)
+
+ listEl.innerHTML=`<em> innerHTML kullanildi </em>`
+
+ console.log(document.URL)
+ console.log(document.title)
+
+ console.dir(document.location)
+console.log(document.cookie) 
+console.dir(document.fonts)
+
+  let h3El= document.querySelector("#h3El").style.backgroundColor="red".
+
+   h3El=document.querySelector("#h3El")
+      
+   h3El.innerText=`<u>  H3 elementi degistirildi </u>` 
+   h3El.innerHTML=`<u>  H3 elementi degistirildi </u>` 
+
+   let divEL=document.querySelector("div");
+
+  divEL.classList.add("red")
+  let pEl=document.querySelector(".about")
+ pEl.classList.remove("about")
+
+
+
+  
+  
+
+
+  
+   
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

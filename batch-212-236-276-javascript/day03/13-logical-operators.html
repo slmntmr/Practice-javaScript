@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logical Operators</title>
+  </head>
+  <body>
+    <script>
+      let x = true;
+      let y = false;
+
+      console.log(x && y); //false
+
+      console.log(x || y); //true
+      /*
+             0, FALSE, NULL, undefined, ""  ve NaN dışındaki durumlar TRUE  kabul edilir.
+       */
+
+      let z = "true";
+      let k = "kedi";
+      let m = "kus";
+      let n = null;
+      console.log(z || k || m || n);
+      console.log(z && k && m && n);
+      console.log(typeof z,z )
+      console.log(m&&n||z)
+
+
+    </script>
+  </body>
+</html>
