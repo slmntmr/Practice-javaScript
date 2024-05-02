@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Discount Rate Applications</h2>
+
+    <input type="number" name="" id="discount">
+    <button onclick="makeDiscount()">İndirimi Uygula</button>
+
+    <ul id="products">
+        <li>Notebook <span>1500</span>$</li>
+        <li>Tablet <span>500</span>$</li>
+        <li>Keyboard <span>200</span>$</li>
+        <li>Mouse <span>30</span>$</li>
+        <li>Memory Card <span>10</span>$</li>
+        <li>USB Card <span>50</span>$</li>
+        <li>Monitör <span>400</span>$</li>
+        <li>Headphone <span>100</span>$</li>
+    </ul>
+
+    <script>
+        // 1 - İndirim oranını alacağız.
+        // 2 - Fiyatları alacağız.
+        // 3 - Fiyatlara indirim oranını uygulayacağız.
+        // 4 - Yeni fiyatları span tag'lerine gireceğiz.
+
+        function makeDiscount(){
+
+            let discount = document.querySelector("#discount").value;
+
+            let productList = document.querySelectorAll("#products li span");
+            console.log(productList[0]);
+
+            for(let i=0; i<productList.length; i++){
+                // console.log(i);
+                let price = productList[i].innerText;
+                let newPrice = price - (price * discount/100);
+                productList[i].innerText = newPrice;
+                
+            }
+        }
+
+    </script>
+</body>
+</html>
