@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Scope</title>
+</head>
+<body>
+    <h2>Block Scope</h2>
+
+    <script>
+
+        function myFunction(){
+
+            var x = "Merhaba";
+            let y = "Dünya";
+            const z = "Hello";
+
+            if(true){
+                var a = "İstanbul"; // var function scope olduğu için block dışına çıkabilir.
+                let b = "Ankara"; // let ve const block scope'tur, sadece block içerisinden erişilebilir.
+                const c = "İzmir";
+                console.log(a, b, c); // İstanbul Ankara İzmir
+            }
+
+            console.log(x, y, z); // Merhaba Dünya Hello
+
+            console.log(a); // İstanbul
+            console.log(b, c) // b ve c için "not defined" hatası verir.
+        }
+
+        //myFunction();
+
+        console.log(k); // undefined
+        var k = 20;
+        console.log(k); // 20
+
+    </script>
+</body>
+</html>

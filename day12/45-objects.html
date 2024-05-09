@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <h2>JS Objects</h2>
+
+    <script>
+
+        const car = {
+            brand: "Mercedes",
+            model: "S500",
+            color: "Beige",
+            gear: "Otomatic",
+            numberOfGears: 8,
+            engine: {
+                type: "V8",
+                size: 4
+            },
+            start: ()=>{
+                console.log("Starting the car");
+            }
+        }
+
+        console.log(car);
+        console.log(typeof car); // object
+        console.log(car.color); // Beige
+        console.log(typeof car.numberOfGears) // number
+        console.log(car.engine.type); // V8
+        console.log(car.start()); // Starting the car
+        console.log(car["brand"]); // Mercedes
+
+        console.log(Object.entries(car));
+        console.log(Object.keys(car)); //  ['brand', 'model', 'color', 'gear', 'numberOfGears', 'engine', 'start']
+        console.log(Object.values(car)); // ['Mercedes', 'S500', 'Beige', 'Otomatic', 8, {…}, ƒ]
+
+        car.numberOfGears = 7;
+        console.log(car.numberOfGears); // 7
+
+        car.oil = "Super";
+        console.log(car.oil); // Super
+
+        car = 7; // "Assignment to constant variable" hatası verir.
+    </script>
+</body>
+</html>

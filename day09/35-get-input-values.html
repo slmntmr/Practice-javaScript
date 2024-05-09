@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Input Values</title>
+    <style>
+        input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    Input 1: <input type="number" id="input1" onchange="showValue(this.type, this.value)"> <br>
+    Input 2: <input type="text" id="input2" onchange="showValue(this.value)"> <br>
+    Input 3: <input type="text" id="input3" onchange="showValue(this.value)">
+
+    <script>
+
+        /* function showValue(x){
+            let input1 = document.querySelector("#input1");
+            let input2 = document.querySelector("#input2");
+            let input3 = document.querySelector("#input3");
+
+            if(x == 1) alert(input1.value);
+            if(x == 2) alert(input2.value);
+            if(x == 3) alert(input3.value);
+        } */
+
+        //////////////////////////////////
+
+        /*
+        function showValue(){
+            alert(event.target.value);
+        }
+        */
+
+        //////////////////////////////////
+
+        function showValue(x, y){
+            alert(x + " " + y);
+        }
+
+        /////////////////////////////////
+
+        function myfunction(a = 3, b = 2){
+            console.log(a * b);
+        }
+
+        myfunction();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonksiyon Çeşitleri</title>
+</head>
+<body>
+    <h2>Fonksiyon Çeşitleri</h2>
+
+    <script>
+
+        declarationFunc(); // function declaration, tanımlandığı satırın üstünde çağrılabilir. Buna hoisting özelliği denir.
+
+        function declarationFunc(){
+            console.log("Bu fonksiyon declaration olarak oluşturulmuştur.");
+        }
+
+        declarationFunc();
+
+        /////////////////////////////////////////
+
+        // expressionFunc(); // function expression, tanımlandığı satırın üstünde çağrılamaz.
+
+        var expressionFunc = function(){
+            console.log("Bu fonksiyon expression olarak oluşturulmuştur.");
+        }
+
+        expressionFunc();
+
+        /////////////////////////////////////////
+
+        // arrowFunc(); // arrow function, tanımlandığı satırın üstünde çağrılamaz.
+
+        var arrowFunc = () => {
+            console.log("Bu fonksiyon arrow olarak oluşturulmuştur.");
+        }
+
+        arrowFunc();
+    </script>
+</body>
+</html>

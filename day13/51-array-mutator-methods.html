@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Mutator Methods</title>
+</head>
+<body>
+    <h2>Array Mutator Methods</h2>
+
+    <script>
+        let numbers = [12,56,14,67,89,33,22];
+        console.log(numbers); // [12, 56, 14, 67, 89, 33, 22]
+        var colors = ["Blue" , "Green", "White", "Black"];
+        var result;
+
+        // 1- push() arrayin sonuna eleman veya elemanlar ekler ve arrayin yeni eleman sayısını döndürür.
+        numbers.push(65);
+        console.log(numbers); // [12, 56, 14, 67, 89, 33, 22, 65]
+
+        result = numbers.push(15, 105);
+        console.log(numbers); // [12, 56, 14, 67, 89, 33, 22, 65, 15, 105]
+        console.log(result); // 10
+
+        // 2 - pop() arrayin son elemanını diziden siler ve bu elemanı döndürür.
+        numbers.pop();
+        console.log(numbers); // [12, 56, 14, 67, 89, 33, 22, 65, 15] (105 silindi)
+
+        result = numbers.pop();
+        console.log(numbers); // [12, 56, 14, 67, 89, 33, 22, 65] (15 silindi)
+        console.log(result); // 15
+
+        // 3 - shift() arrayin ilk elemanını siler ve bu elemanın değerini döndürür.
+        numbers.shift();
+        console.log(numbers); // [56, 14, 67, 89, 33, 22, 65] (12 silindi)
+
+        result = numbers.shift();
+        console.log(numbers); // [14, 67, 89, 33, 22, 65] (56 silindi)
+        console.log(result); // 56
+
+        // 4 - unshift() arrayin ilk indeksine eleman veya elemanlar ekler ve arrayin yeni eleman sayısını döndürür.
+        numbers.unshift(250);
+        console.log(numbers); //  [250, 14, 67, 89, 33, 22, 65]
+
+        result = numbers.unshift(255, 350);
+        console.log(numbers); // [255, 350, 250, 14, 67, 89, 33, 22, 65]
+        console.log(result); // 9
+
+        // 5 - sort() arrayi alfabetik veya aritmetik sıraya göre sıralar.
+        numbers.sort();
+        console.log(numbers); // [14, 22, 250, 255, 33, 350, 65, 67, 89]
+
+        numbers.sort((x,y) => x - y);
+        console.log(numbers); // [14, 22, 33, 65, 67, 89, 250, 255, 350]
+
+        result = colors.sort();
+        console.log(colors); //  ['Black', 'Blue', 'Green', 'White']
+        console.log(result); // ['Black', 'Blue', 'Green', 'White']
+
+        // 6 - reverse() arrayi ters sıralar.
+        numbers.reverse();
+        console.log(numbers); //  [350, 255, 250, 89, 67, 65, 33, 22, 14]
+
+        colors.reverse();
+        console.log(colors); // ['White', 'Green', 'Blue', 'Black']
+
+        // 7 - splice() farklı şekillerde kullanılabilir.
+        // a - Beirtilen indeksten sonrasını siler.
+        result = numbers.splice(6);
+        console.log(numbers); // [350, 255, 250, 89, 67, 65] 6. indeksten itibaren silindi.
+        console.log(result); //  [33, 22, 14]
+
+        // b - Belirtilen indeksten itibaren belirtilen sayıda eleman siler.
+        numbers.splice(3,1);
+        console.log(numbers); // [350, 255, 250, 67, 65] 3. indeksten itibaren 1 eleman sildi.
+
+        // c - Belirtilen indeksten itibaren siler ve eklemeler de yapabilir.
+        numbers.splice(1,1,30,49);
+        console.log(numbers); //  [350, 30, 49, 250, 67, 65] 1. indeksteki elemanı sildi, yerine 2 eleman ekledi.
+
+        numbers.splice(3,0,42);
+        console.log(numbers); // [350, 30, 49, 42, 250, 67, 65]
+
+    </script>
+</body>
+</html>

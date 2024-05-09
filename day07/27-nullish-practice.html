@@ -8,13 +8,11 @@
 <body>
     <h2>Nullish Practice</h2>
 
-    <!-- <h3 id="result"></h3> -->
-
-    <h2 id="h2"></h2>
+    <h3 id="result"></h3>
 
     <script>
 
-       /*  function calculateArea(a, b){
+        function calculateArea(a, b){
 
             // let area = (a == null || a == undefined ? 0 : a) * (b == null || b == undefined ? 0 : b);
             let area = (a ?? 0) * (b ?? 0);
@@ -22,20 +20,7 @@
             document.querySelector("#result").innerHTML = "Alan: " + area;
         }
 
-        calculateArea(3, 5); */
-
-        function environment(x,y) {
-
-            let environmentCount=2*((x ?? 0)+(y ?? 0));
-
-            document.querySelector("#h2").innerHTML ="environment : " + environmentCount;
-
-        }
-        environment(2,3);
-
-
-
-        
+        calculateArea(3, 5);
     </script>
 </body>
 </html>

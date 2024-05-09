@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+
+    <style>
+        button {
+            padding: 7px 20px;
+            margin: 10px;
+            font-size: 18px;
+            background-color: lightgreen;
+            border-radius: 8px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Handling</h2>
+
+    <button id="btn1" onclick="sayHello()">Hello1</button>
+    <button id="btn2">Hello2</button>
+    <button id="btn3">Hello3</button>
+    <button id="btn4">Hello4</button>
+    <button id="btn5">Hello5</button>
+
+    <script>
+
+        // 1. Yöntem - Event listener tag içinde 
+        function sayHello(){
+            alert("Merhaba Dünya");
+        }
+
+        // 2. Yöntem
+        let btn2 = document.querySelector("#btn2");
+        btn2.onclick = sayHello;
+
+        // 3. Yöntem
+        let btn3 = document.querySelector("#btn3");
+        btn3.addEventListener("click", sayHello);
+
+        // Anonymous function ile
+        let btn4 = document.querySelector("#btn4");
+
+        /*btn4.onclick = ()=>{
+            alert("Merhaba Dünya");
+        }*/
+
+        btn4.addEventListener("click", ()=> alert("Merhaba Dünya"));
+
+        // Some other events
+        let btn5 = document.querySelector("#btn5");
+        btn5.addEventListener("copy", function(){
+            this.style.backgroundColor = "coral";
+        });
+
+    </script>
+</body>
+</html>

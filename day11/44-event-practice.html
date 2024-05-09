@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Practice</title>
+
+    <style>
+        input, button, div {
+            margin: 7px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Practice</h2>
+
+    <input type="number" id="vize" placeholder="vize notu giriniz..."> <br>
+    <input type="number" id="final" placeholder="final notu giriniz..."> <br>
+    <button id="btn">Hesapla</button>
+    <div id="result"></div>
+
+    <script>
+
+        // 1 - input'lardaki değerleri alacağız.
+        // 2 - ortalamayı hesaplayan bir function oluşturacağız.
+        // 3 - harf notunu belirleyen bir function oluşturacağız.
+        // 4 - bu fonksiyonları handler function içinde çağırıp gerekli değerleri elde edeceğiz.
+        // 5 - En son hepsini sayfaya yazdıracağız.
+
+        
+        document.querySelector("#btn").addEventListener("click", ()=>{
+
+            let vize = document.querySelector("#vize").value;
+            let final = document.querySelector("#final").value;
+
+            // Hata mesajını göstermesi için if'in içine girecek şekilde ayarlıyoruz.
+            if(!isNoteValid(vize) || !isNoteValid(final)){
+                alert("Lütfen geçerli bir not giriniz.");
+                return;
+            }
+
+            let average = calculateAverage(vize, final);
+            let letterGrade = convertToLetter(average);
+
+            document.querySelector("#result").innerHTML = `Ortalama: ${average}, Harf Notu: ${letterGrade}`;
+            
+            document.querySelector("#vize").value = "";
+            document.querySelector("#final").value = "";
+        });
+
+        // calculateAverage function
+
+        const calculateAverage = (a, b) => {
+            return (a*0.4 + b*0.6).toFixed(1);
+        }
+
+        // convertToLetter function
+
+        const convertToLetter = (avg) => {
+
+            let letter;
+            switch(true){
+
+                case (avg >= 90):
+                letter = "A";
+                break;
+
+                case (avg >= 80):
+                letter = "B";
+                break;
+
+                case (avg >= 70):
+                letter = "C";
+                break;
+
+                case (avg >= 50):
+                letter = "D";
+                break;
+
+                default:
+                letter = "F";
+            }
+
+            return letter;           
+        }
+
+        // isNoteValid
+
+        const isNoteValid = (point) => {
+            return point >= 0 && point <= 100 && point;
+        }
+        // Hiçliğin boolean değeri false olduğu için aynen yazıyoruz.
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Access Methods</title>
+</head>
+<body>
+    <h2>Array Access Methods</h2>
+
+    <script>
+
+        let animals = ["cat", "dog", "elephant", "tiger", "cat"];
+        let result;
+
+        // 1- concat() bir array ile başka bir array ya da bir değeri birleştirerek yeni bir array döndürür.
+        // Mevcut array bozulmaz, aynı kalır.
+        result = animals.concat("wolf");
+        console.log(animals);
+        console.log(result); //  ['cat', 'dog', 'elephant', 'tiger', 'wolf']
+
+        let animals2 = ["lion", "rabbit", "fox"];
+        animals = animals.concat(animals2);
+        console.log(animals); // ['cat', 'dog', 'elephant', 'tiger', 'lion', 'rabbit', 'fox']
+
+        // 2 - includes() bir arrayin belirli bir elemanı içerip içermediğini belirtir.
+        result = animals.includes("sheep");
+        console.log(result); // false
+
+        result = animals.includes("fox");
+        console.log(result); // true
+
+        // 3 - indexOf() arraydeki elemanın ilk gördüğü yerdeki indeksini döndürür.
+        // Eleman dizide yoksa -1 döndürür.
+        result = animals.indexOf("eagle");
+        console.log(result); // -1
+
+        result = animals.indexOf("cat");
+        console.log(result); // 0
+
+        // 4 - lastIndexOf() arraydeki elemanın son görüldüğü yerdeki indeksini döndürür.
+        result = animals.lastIndexOf("cat");
+        console.log(result); // 4
+
+        // 5 - join(), bir array içindeki tüm elemanları aralarına bir veya daha fazla karakter koyarak birleştirip string olarak döndürür.
+
+        result = animals.join("-");
+        console.log(result); // cat-dog-elephant-tiger-cat-lion-rabbit-fox
+        console.log(typeof result); // string
+
+        // 6 - toString() arrayin içindeki elemanları tek bir string olarak dönüştürür.
+        result = animals.toString();
+        console.log(result); // cat,dog,elephant,tiger,cat,lion,rabbit,fox
+        console.log(typeof result); // string
+
+        // 7 - slice(), bir dizinin elemanlarını belirtilen başlangıç indeksinden başlayarak bitiş indeksine göre bir kopyasını oluşturarak yeni bir array döndürür. Bitiş indeksi dahil değildir.
+
+        result = animals.slice(2, 5);
+        console.log(animals); // ['cat', 'dog', 'elephant', 'tiger', 'cat', 'lion', 'rabbit', 'fox']
+        console.log(result); // ['elephant', 'tiger', 'cat']
+
+    </script>
+    
+
+</body>
+</html>

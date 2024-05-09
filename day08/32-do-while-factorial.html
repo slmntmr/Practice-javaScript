@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do While Faktoriyel</title>
+</head>
+<body>
+    <h2>Do While Factorial</h2>
+
+    <input type="text" id="num">
+    <button onclick="calculate()">Hesapla</button>
+    <div class="result"></div>
+
+    <script>
+
+        function calculate(){
+
+            // Number(), input boş olduğunda 0, string olduğunda ise NaN döndürür.
+            let num = Number(document.querySelector("#num").value);
+            console.log(num);
+
+            let factorial = 1;
+
+            if(num > 0 && Number.isInteger(num)){
+
+                do {
+                    factorial *= num; // factorial = factorial * num
+                    num--;
+                } while(num > 0);
+    
+                document.querySelector(".result").innerHTML = `Faktöriyel sonucu: ${factorial}`;
+            }
+
+            else {
+                document.querySelector(".result").innerHTML = "Lütfen geçerli bir sayı giriniz.";
+            }
+            
+        }
+
+    </script>
+</body>
+</html>
