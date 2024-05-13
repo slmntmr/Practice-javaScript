@@ -37,6 +37,37 @@
         let total = calculate(numbers);
         console.log(total);
 
+        let points=[5,7,10,-9,-19,25];
+        
+         let comesGoes=[5,2,-2,3,-1,6];
+
+        function hesapla(point){
+
+
+            let pozitivePoints= 0;
+            let negativePoints= 0;
+
+            for(let i=0; i<point.length; i++){
+                if(point[i]>0){
+                    pozitivePoints +=point[i];
+                }
+                else{
+                    negativePoints +=point[i];
+                }
+                
+            }
+            return pozitivePoints - negativePoints;
+
+        }
+
+       let show=hesapla(points);
+       console.log(show);
+       console.log(hesapla(comesGoes));
+
+      console.log(calculate(points)) ;
+      console.log(calculate(comesGoes));
+
+
     </script>
 </body>
 </html>
